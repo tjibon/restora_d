@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="assets/css/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Restora - Documentation</title>
+    <style>
+        .v-toolbar {
+            background-color: #E7272D !important;
+        }
+
+        .v-footer {
+            background-color: #E7272D !important;
+        }
+        .v-footer span{
+            width:100%;
+            text-align: center;
+        }
+        
+        .sub_menu .v-list__tile__action, .v-list__tile__avatar {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 56px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <template>
+                <v-app id="inspire">
+                    <v-navigation-drawer
+                      :clipped="$vuetify.breakpoint.lgAndUp"
+                      v-model="drawer"
+                      fixed
+                      app
+                    >
+                      <v-list dense>
+
+                          <v-list-tile href="#About">
+                            <v-list-tile-action>
+                              <v-icon>group_work</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>About</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+
+                          <v-list-tile href="#installation">
+                            <v-list-tile-action>
+                              <v-icon>power_settings_new</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Installation</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+
+                          <!------Frontend menu----->
+                          <v-list-tile href="#Home" style="border-bottom: 1px solid #dadada;">
+                            <v-list-tile-action>
+                              <v-icon>subject</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Frontend</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>                         
+                      
+                          
+                          <v-list-tile href="#Creat_account" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Create account</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Home" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Home</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Products" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Products</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Cart" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Cart</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Search" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Search</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Signin" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Sign in</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          <!------End of Frontend menu----->
+                          
+                           <!------Backend menu----->
+                          <v-list-tile href="#admin" style="border-bottom: 1px solid #dadada;">
+                            <v-list-tile-action>
+                              <v-icon>autorenew</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Backend</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Dashboard" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Dashboard</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Customer" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Customers</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Products" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Products</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Pos" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>POS</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Deliveries" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Deliveries</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Orders" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Order</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Sales" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Sales</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Expenses" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Expenses</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                         <v-list-tile href="#Report" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Report</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Options" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Options</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#live_chat" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Live chat</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          
+                          <v-list-tile href="#Settings" class="sub_menu">
+                            <v-list-tile-action>
+                              <v-icon>keyboard_arrow_right</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                              <v-list-tile-title>Settings</v-list-tile-title>
+                            </v-list-tile-content>
+                          </v-list-tile>
+                          <!------End of Backend menu----->
+
+                        </v-list>
+                    </v-navigation-drawer>
+
+
+                    <v-toolbar color="indigo" dark fixed app>
+                        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+                        <v-toolbar-title>Restora - Documentation</v-toolbar-title>
+                    </v-toolbar>
+
+                    <v-content>
+                        <v-container fluid fill-height>
+                            <v-layout justify-center align-center>
+                                <v-flex text-xs-left>
+
+                                    <!---For user-------->
+                                    <!-- About  -->
+                                    <section id="About" class="mb-5">
+                                        <h1>About Restora</h1>
+                                        <span class="subheading">
+                                          Restora is an online based Restaurant Management System that is<br>
+                                          fit for any type of Restaurant, Food shop, Catering, E-commerce <br>
+                                          and any type of restaurant related business.<br>
+
+                                          Restora created with materialize design that works perfectly on any device. <br>
+
+                                        </span>
+                                    </section>
+
+                                  <!-- Installation  -->
+                                  <section id="installation">
+                                    <br><br><br><br>
+                                    <h1>Installation</h1>
+                                    <p>Install Restora in your server</p>
+                                    <v-divider class="my-3"></v-divider>
+                                    <h3>Free Installation</h3>
+                        
+                                    <img src="assets/images/free-installation.png"><br>
+                                    <p>
+                                      Well if you face any problem to install Restora in your server.<br>
+                                      We will provide a free installation support for you.<br>
+                                      Just send us an email. Will contact as soon as possible <br><br>
+                                      <b>Support Email: pukutech@gmail.com</b>
+                                    </p>
+                        
+                                    <h1>Installation Guide</h1><br>
+                                    <h3>Step 1: Create Firebase Account </h3>
+                                    <p>Restora is a firebase based system. 
+                                      So first of all you have to create a Firebase account<br>
+                                      Login your Gmail account and then go to this link <br>
+                                      <b>https://firebase.google.com/</b>
+                                    </p>
+                                    <img width="100%" src="assets/images/firebase-google-link.png"><br>
+                                    <p>Then click on <b>GO TO CONSOLE</b> Then click <b>Add Project</b></p>
+                                  
+                                    <p>Now this is your firebase admin dashboard</p>
+                                    <img width="50%" src="assets/images/firebase-dashboard.png"><br><br>
+                                    <p>Click on <b>Add Firebase to your web app</b> And copy this code</p>
+                                    <img width="50%" src="assets/images/firebase-code.png"><br><br>
+                                    <p>Paste it on your <b>src/firebase/init.js</b> file</p>
+                                    <img width="50%" src="assets/images/firebase-init.png"><br><br>
+                                    <p>Enable Email/Password Method</p>
+                                    <img width="70%" src="assets/images/firebase-auth-enable.png"><br><br> 
+                                    <p>Change Rules like this</p>
+                                    <img width="50%" src="assets/images/rules.png"><br><br> 
+                                    <p>Now need to deploy firebase function in your console</p>
+                                    <img width="70%" src="assets/images/firebase-function.png"><br><br>
+                                    <p>Now click on <b>Database</b> and select Firestore</p><br> 
+                                   
+                        
+                                    <br><br><br>                        
+                                    
+                                    <h3>Step 2: Build & Upload file to hosting server </h3><br>
+                                   
+                                    <p>
+                                      Now select your downladed folder <b>restora</b> and open command window.<br>
+                                      If you have already npm installed in your computer you can run the command <b>"npm run build"</b><br>
+                                      After build complete <b>dist</b> folder will generate.
+                                    </b><br>
+
+                                    <b>Note: </b>If you dont have npm installed in your computer then you can <br>
+                                    Setup NPM from here. <b>https://nodejs.org/en/</b><br><br><br>
+                        
+                        
+                                    <h3>Step 3: Upload dist folder to public_html </h3>
+                                    <p>
+                                      Zip the dist folder then upload to <b>public_html</b> folder in your hosting server.<br>
+                                      And refresh your URL.
+                                    </p>
+                        
+                                    <h3>Step 4: Setup </h3>
+                                    <p>Well if everything is ok then you will get a setup form.</p> <br>                                      
+                                    <p>Go to setup section like this sample link  www.yourdomain.com/admin</p><br>
+                                    <img width="50%" src="assets/images/setup-form.png"><br><br>
+                                    
+                        
+                                    <h3>Note</h3>
+                                    <p>After Setup successfully if you find any problem on URL(url refresh return 404 Not Found)<br>
+                                      create a .htaccess file in your root folder and use this code
+                                    </p>
+                                    <img src="assets/images/htaccess.png"><br>
+                                    You can get this code here<br>
+                                    <b> https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations</b><br><br>
+                                    <br><br><br>
+                                    </section>
+                                    
+                                    <!-- Home  -->
+                                    <section id="Home" class="mb-5">
+                                        <h1>Home</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>In home page you have four section.</p>
+                                        <p><b>1.Slider</b></p>
+                                        <img width="100%" src="assets/images/home_slider.png">
+                                        <p><b>2.Food menu</b></p>
+                                        <img width="100%" src="assets/images/home_menu.png"><br><br>
+                                        <p><b>3.Review</b></p>
+                                        <img width="100%" src="assets/images/home_review.png"><br><br>
+                                        <p><b>4.Feature</b></p>
+                                        <img width="100%" src="assets/images/home_feature.png">
+                                    </section>
+                                    
+                                    <section class="mb-5">
+                                        <h1>Menu</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <img width="100%" src="assets/images/menu.png">
+                                    </section>
+                                    
+                                    <!---Create account--->
+                                    <section id="Creat_account" class="mb-5">
+                                        <h1>Create Account:</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>In menu you will find <b>Create account</b> option where you can create your own account.Select it and a form will appear given below.</p>
+                                        <img width="100%" src="assets/images/creat_account.png"><br><br><br>
+                                        <img width="100%" src="assets/images/creat_account_form.png"><br><br><br>
+                                        <p>After selecting the <b>CREATE ACCOUNT</b> button,a page will appear which will make you confirm that your account has been created.</p>
+                                        <img width="100%" src="assets/images/own_account.png"><br><br><br>
+                                        <p>In this page,there are some options like <b>Edit Account</b>,<b>Order History</b>,<b>Settings</b>.</p>
+                                        <p><b>Edit account</b> is to change your account if you need it.For example,select it..</p>
+                                        <img width="100%" src="assets/images/edit_account.png"><br><br><br>
+                                        <p>Now,change where you want to make a change.</p>
+                                        
+                                        <p><b>Order History</b> shows if there is any order from you that has been purchased by you.Here in the below image,your <b>Order History</b> is blank because you have not puchased any item yet.</p>
+                                        <p>At the right side of the menu you will see <b>LOG OUT</b> which will log you out form your account and you can again sign in your account from the menu <b>SIGN IN</b>.</p>
+                                        <img width="100%" src="assets/images/order_history.png">
+                                    </section>
+                                    
+                                    <!---Signin--->
+                                    <section id="Signin" class="mb-5">
+                                       <h1>Sign in:</h1>
+                                       <v-divider class="my-3"></v-divider> 
+                                       <p>Click on <b>SIGNIN</b> menu.Give Email and Password and signin.</p>
+                                       <img width="100%" src="assets/images/signin.png">
+                                    </section>
+                                    
+                                    <!---search--->
+                                    <section id="Search" class="mb-5">
+                                       <h1>Search:</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>If you click on the searchbar you will find a list of category.Select the category and you will go to a individual category page that you have selected.For example,i have selected Pizza.</p>
+                                        <img width="100%" src="assets/images/searchbar.png"><br><br><br>
+                                        
+                                        <p>Now Pizza category page has opened.Here if you hover on or select any item,you will find there are two options about the item.</p>
+                                        <p>1.Details</p>
+                                        <p>2.Add to cart</p>
+                                        <img width="100%" src="assets/images/category.png"><br><br><br>
+                                        
+                                        <p><b>Details</b> give you a full description of the product or item.If you want to purchase the item,select <b> Add to cart</b> and your product will go to cart.In <b>Details</b> page,there you will find <b>ADD TO CART</b> button also and you can buy the item from here too by selecting <b>ADD TO CART</b> button.</p>
+                                        <img width="100%" src="assets/images/details.png">
+                                    </section>
+                                       
+                                    <!-----Cart----->
+                                    <section id="Cart" class="mb-5">
+                                        <h1>Cart:</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>If you open your cart,there you will find your selected item.Here you can increase or decrease your item's quantity number and your total price will be given there.If you are done then select <b>place Order</b> to make an order. </p>
+                                        <img width="100%" src="assets/images/cart.png"><br><br><br>
+                                        <img width="100%" src="assets/images/place_order.png"><br><br><br>
+                                        <p>Press <b>PROCEED TO CHECK OUT</b> and your order detais will be shown.</p>
+                                        <img width="100%" src="assets/images/your_order.png"><br><br><br>
+                                        <p>At last press <b>PLACE ORDER</b> and a confirmation message will be shown.</p>
+                                        <img width="100%" src="assets/images/thank_you.png"><br><br><br>
+                                        <p>Now if you want to check your order,go to <b>MY ACCOUNT</b> from menu </p>
+                                        <img width="100%" src="assets/images/check_account.png"><br><br><br>
+                                        <img width="100%" src="assets/images/check_order.png"><br><br><br>
+                                        <img width="100%" src="assets/images/order_history_list.png"><br><br><br>
+                                        <p>Click on your item/product from the table and all your order histoty will be shown.</p>
+                                        <img width="100%" src="assets/images/item_history_details.png">
+                                    </section>
+                                    
+                                    <!------------------------------------------------------------->
+                                    <!------------------------For admin---------------------------->
+                                    <section id="admin" class="mb-5">
+                                        <h1>Admin</h1>
+                                        <p>How to access admin</p>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>If you want to go to admin pannel,first go to url link and type "/admin" and enter.Example is given below:</p>
+                                        <img width="100%" src="assets/images/admin_link.png"><br><br><br>
+
+                                        <p>Admin login page will open.</p>
+                                        <img width="100%" src="assets/images/admin_login.png"><br><br><br>
+
+                                        <p>Give admin email and password and <b>SIGN IN</b></p>
+                                        <img width="100%" src="assets/images/admin_login1.png">
+                                    </section>
+                                    
+                                    <!----Dashboard---->
+                                    <section id="Dashboard" class="mb-5">
+                                        <h1>Dashboard</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>Dashboard is a summary of the business.</p>
+                                        <img width="100%" src="assets/images/admin_page.png">
+                                    </section>
+                                    
+                                    <!----Customer---->
+                                    <section id="Customer" class="mb-5">
+                                        <h1>Customer</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>Here you will find a search option on the top and a list of  all customers.At the right side of each customer there is a remove button which will remove a customer from the list.</p>
+                                        <img width="100%" src="assets/images/customers.png"><br><br><br>
+                                        <p>Click on any customer and you will find the individual cusomer's details and purchase history.</p>
+                                        <img width="100%" src="assets/images/customers_details.png">
+                                    </section>
+                                    
+                                    <!----Sales---->   
+                                    <section id="Sales" class="mb-5">
+                                        <h1>Sales</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Sales</b> menu has two sub menu.<b>Sales</b> and <b>Sales Report</b>.If ypu click on sales it will show all the total sales of each month of the year.</p>
+                                        <img width="100%" src="assets/images/sales.png"><br><br><br>
+                                        
+                                        <p><b>Sales Report</b> will show the total sales of the current month and also the total sales of each month of the year.</p>
+                                        <img width="100%" src="assets/images/sales_report.png">
+                                    </section>
+                                    
+                                    <!----Expenses----> 
+                                    <section id="Expenses" class="mb-5">
+                                        <h1>Expenses</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Expenses</b> menu has two sub menu.<b>Expenses</b> and <b>Expenses Report</b>.If ypu click on Expenses it will show all the total Expenses of each month of the year.</p>
+                                        <img width="100%" src="assets/images/expense.png"><br><br><br>
+                                        
+                                        <p><b>Expenses Report</b> will show the total Expenses of the current month and also the total Expenses of each month of the year.</p>
+                                        <img width="100%" src="assets/images/expense_report.png">
+                                    </section>
+                                    
+                                    <!----Products----> 
+                                    <section id="Products" class="mb-5">
+                                        <h1>Products</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Products</b> menu has 2 submenu.<b>1.Items</b>,<b>2.Categories</b></p>
+                                        <p><b>1.Items</b> will show all the products with category.At the right side of each product there is a edit option that will help you to edit your product's details.</p>
+                                        <img width="100%" src="assets/images/products_item.png"><br><br><br>
+                                        <p>Now you can edit your item here. </p>
+                                        <img width="100%" src="assets/images/product_item_edit.png"><br><br><br>
+                                        <p><b>2.Categorties</b> will show a list of all categories items.</p>
+                                        <img width="100%" src="assets/images/product_categories.png">
+                                    </section>
+                                    
+                                    <!----Products----> 
+                                    <section id="Pos" class="mb-5">
+                                        <h1>Pos</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p>Pos section has severel parts.On the top of this section,it describes total orders of that day,total sales of that day and total items that is availabe. There is also a searchbar by which you can search the different categories of item. </p>
+                                        <img width="100%" src="assets/images/pos1.png"><br><br><br>
+                                        <p>Below the searchbar you will find different categories of item.If you select Add to cart from the item,your item will go to the cart which has been showed in the below picture.</p>
+                                        <img width="100%" src="assets/images/pos2.png"><br><br><br>
+                                        <img width="100%" src="assets/images/pos3.png"><br><br><br>
+                                        <p>You can include VAT if you want and press <b>Place Order</b> button.Then Checkout page will appear.</p>
+                                        <img width="100%" src="assets/images/pos4.png">
+                                        <p>Here you will find two button,<b>Checkout</b> and <b>Checkout with print</b>.If you don't want to print the bill then just press the <b>Checkout</b> button but if you want to print the bill then press <b>Checkout with print</b> button.</p>
+                                        <img width="100%" src="assets/images/pos5.png">
+                                        <p>Your bill preview will be shown.You can Zoom in/out the preview to watch clearly and finally press <b>Print</b> button.</p>
+                                        <img width="30%" src="assets/images/pos6.jpg" class="text-xs-center">
+                                    </section>
+                                    
+                                    <!----Orders---->    
+                                    <section id="Orders" class="mb-5">
+                                        <h1>Orders</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Orders menu</b> shows all the orders that is <b>Pending</b>,<b>Processing</b>,<b>Completed</b> or <b>Cancelled</b></p>
+
+                                        <p>In this page there is also a list of all orders that is pending,processing,completed and cancelled.When customer add products into the cart and check out, the order will add in the pending list.For example,from the below picture a product that has been ordered by a customer is showing pendinng on the top of the list.</p>
+                                        <img width="100%" src="assets/images/orders.png"><br><br><br>
+
+                                        <p>Now click on the any order that is pending and a page will appear given below.If you want to deliver the order by your delivery man then fill up the option that has been marked.</p>
+                                        <img width="100%" src="assets/images/order_pending.png"><br><br><br>
+
+                                        <p>Now select <b>processing</b> button and the order will be in process.</p>
+                                        <img width="100%" src="assets/images/order_processing.png"><br><br><br>
+
+                                        <p>You can also check this product in the list which will show the order is in process.</p>
+                                        <img width="100%" src="assets/images/order_in_process.png"><br><br><br>
+
+                                        <p>When the customer will pay the bill,click on the product that is in process and select <b>COMPLETE</b> button.Thus an order has been completed.</p>
+                                        <img width="100%" src="assets/images/order_complete.png"><br><br><br>
+
+                                        <p>If the order has been cancelled,just select <b>CANCELLED</b> button and the order will be cancelled.</p>
+                                        <img width="100%" src="assets/images/order_cancel.png">
+                                    </section>
+                                    
+                                    <!----Deliveries---->   
+                                    <section id="Deliveries" class="mb-5">
+                                        <h1>Deliveries</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Deliveries</b> menu has 3 submenu.<br></p>
+                                        <p><b>1.Recent Deliveries</b>,<br>
+                                            <b>2.Delivery List</b>,<br>
+                                            <b>3.Delivery Person.</b><br>
+                                        </p>
+                                        <p><b>1.Recent Deliveries</b> shows which recent orders you have to deliver.</p>
+                                        <img width="100%" src="assets/images/deliveries.png"><br><br><br>
+
+                                        <p><b>2.Delivery List</b> shows all the orders that will have to deliver.</p>
+                                        <img width="100%" src="assets/images/delivery_list.png"><br><br><br>
+                                        <p>If the customer get the order,you can select green button to complete the order from here too.</p>
+                                        <p>If you select on any order it will show customer's details and his order list.Below the page that is marked ,is the same procedure to deliver an order that has been described before.</p>
+
+                                        <img width="100%" src="assets/images/delivery_list_order.png"><br><br><br>
+
+                                        <p><b>3.Delivery Person</b> shows all the delivery person's name and their details.</p>
+                                        <img width="100%" src="assets/images/delivery_person.png">
+                                    </section>
+                                    
+                                    <!----Options----> 
+                                    <section id="Options" class="mb-5">
+                                        <h1>Options</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Options</b> menu has four submenu.</p>
+                                        <p><b>1.Logo</b></p>
+                                        <p><b>2.Slider</b></p>
+                                        <p><b>3.Features</b></p>
+                                        <p><b>4.Reviews</b></p>
+
+                                        <p><b>1.Logo</b> manu is used to change the logo of your site.Click on <b>Choose file</b>,select a logo and click on <b>ADD LOGO</b> button.Your new logo will be added.</p>
+                                        <img width="100%" src="assets/images/logo.png"><br><br><br>
+
+                                        <p><b>2.Slider</b> menu is used to add or remove slider image.Click on remove button which is on the right side of slider image and the particular slider image will be deleted.</p>
+                                        <img width="100%" src="assets/images/slider.png"><br><br><br>
+                                        <p>If you want to add a new slider image,click on the add button that is on the right bottom of your site.Click on <b>Choose file</b> button,select a new slider image and click on <b>ADD SLIDER</b> button.your new slider image will be added.</p>
+
+                                        <p><b>3.Features</b> menu is used to add or remove feature item.If you want to remove a feature item,click on remove button that is on the right side of the feature item.</p>
+                                        <img width="100%" src="assets/images/features.png"><br><br><br>
+                                        <p>If you want to add a new feature item,click on the add button that is on the right bottom side of your site.Now select <b>Icon</b>,<b>Title</b> and <b>Text</b> and click on <b>ADD NEW FEATURE</b> button.Thus you can creat a new feature item.</p>
+                                        <img width="100%" src="assets/images/features1.png">
+                                    </section>
+                                    
+                                    <!---Reviews--->
+                                    <section id="Reviews" class="mb-5">
+                                        <h1>Reviews</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>4.Reviews</b> menu is used to remove or add a review.Click on remove button of any review and review will be deleted. </p>
+                                        <img width="100%" src="assets/images/review.png"><br><br><br>
+                                        <p>If you want to add a new review,click on add button on the right bottom side of your site.Select <b>Name</b>,<b>Review</b> and <b>Designation</b>,Select <b>Choose File</b> button to upload an image and select <b>ADD NEW REVIEW</b> button.Thus a new review will be added.</p>
+                                        <img width="100%" src="assets/images/review1.png">
+                                        
+                                    </section>
+                                    
+                                    <!---Report--->
+                                    <section id="Report" class="mb-5">
+                                        <h1>Report</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Report</b> menu shows daily,monthly and yearly report of total sales, expenses and net earnings after tax of your business.</p>
+                                        <img width="100%" src="assets/images/report.png">
+                                        <img width="100%" src="assets/images/report2.png"><br><br><br>
+                                    </section>
+                                        
+                                    <!---live chat--->
+                                    <section id="live_chat" class="mb-5">
+                                        <h1>Live chat</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Live Chat</b> menu is used for live conversation with user.You can click on remove button to delete any conversation.</p>
+                                        <img width="100%" src="assets/images/live_chat.png"><br><br><br>
+                                        <p>You can click on any user name for live conversation.</p>
+                                        <img width="100%" src="assets/images/live_chat1.png">
+                                    </section>
+                                    
+                                    <!---Settings--->
+                                    <section id="Settings" class="mb-5">
+                                        <h1>Settings</h1>
+                                        <v-divider class="my-3"></v-divider>
+                                        <p><b>Settings</b> menu is used to update <b>Email</b>,<b>Password</b>,<b>Currency</b>,<b>Update tax rate</b>,and<b>Update shipping cost</b></p>
+                                        <img width="100%" src="assets/images/setting.png">
+                                        <img width="100%" src="assets/images/setting2.png">
+                                        <img width="100%" src="assets/images/setting3.png">
+                                        <img width="100%" src="assets/images/setting4.png">
+                                        <img width="100%" src="assets/images/setting5.png"><br><br><br>
+                                    </section>
+
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                    </v-content>
+
+                   
+                </v-app>
+            </template>
+        </v-app>
+    </div>
+
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/vuetify.js"></script>
+    <script>
+       new Vue({
+      el: '#app',
+      data: () => ({
+        drawer: null
+    
+      }),
+      props: {
+        source: String
+      }
+    })
+    </script>
+
+</body>
+
+</html>
